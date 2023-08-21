@@ -10,7 +10,7 @@ import datetime
 from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader
 from torchvision import transforms
-from CustomDataSet import CustomDataSet
+from custom_dataset import custom_dataset
 
 if __name__ == '__main__':
 
@@ -41,9 +41,9 @@ if __name__ == '__main__':
 
     folder = './data/kmnist-npz/'
 
-    train = CustomDataSet(folder, train_or_test='train', transforms=transform_train)
-    val = CustomDataSet(folder, train_or_test='test', transforms=transform_valid)
-    test = CustomDataSet(folder, train_or_test='val', transforms=transform_valid)
+    train = custom_dataset(folder, train_or_test='train', transforms=transform_train)
+    val = custom_dataset(folder, train_or_test='test', transforms=transform_valid)
+    test = custom_dataset(folder, train_or_test='val', transforms=transform_valid)
 
     train_loader = DataLoader(train, batch_size=128, shuffle=True, pin_memory=True)
     val_loader = DataLoader(val, batch_size=128, shuffle=True,  pin_memory=True)

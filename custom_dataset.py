@@ -2,7 +2,7 @@ import os
 import numpy as np
 from torch.utils.data import Dataset
 
-class CustomDataSet(Dataset):
+class custom_dataset(Dataset):
     base_filename = 'kmnist-{}-{}.npz'
     data_filepart = 'imgs'
     labels_filepart = 'labels'
